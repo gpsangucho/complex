@@ -1,0 +1,22 @@
+CREATE USER restaurante_user WITH PASSWORD 'admin123';
+CREATE DATABASE restaurante_db OWNER restaurante_user;
+
+\c restaurante_db
+
+ALTER SCHEMA public OWNER TO restaurante_user;
+GRANT ALL ON SCHEMA public TO restaurante_user;
+GRANT CREATE ON SCHEMA public TO restaurante_user;
+
+ALTER DEFAULT PRIVILEGES FOR USER restaurante_user IN SCHEMA public
+GRANT ALL ON TABLES TO restaurante_user;
+
+ALTER DEFAULT PRIVILEGES FOR USER restaurante_user IN SCHEMA public
+GRANT ALL ON SEQUENCES TO restaurante_user;
+
+ALTER DEFAULT PRIVILEGES FOR USER restaurante_user IN SCHEMA public
+GRANT ALL ON FUNCTIONS TO restaurante_user;
+
+
+===================================================
+
+user/user@email.com/password
